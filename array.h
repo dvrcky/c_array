@@ -36,6 +36,7 @@ extern void cstr_split(struct array*, char*, const char*);
 
 /* returns -1 if couldn`t find element */
 extern int binary_search(const struct array*, int);
+extern int rbinary_search(const struct array*, int);
 extern bool check_if_array_sorted(const struct array*);
 
 #endif

@@ -109,11 +109,15 @@ void cstr_split(struct array* array, char* input, const char* delim) {
 int binary_search(const struct array* array, int to_find) {
 	int right_index = array->size - 1;
 	int left_index = 0;
+	int found = -1;
 
 	while (left_index <= right_index) {
-		int middle_index = (right_index + left_index) / 2;
+		int middle_index = (left_index + right_index) / 2;
 
-		if (array->array[middle_index] == to_find) return middle_index;
+		if (array->array[middle_index] == to_find) {
+			found = middle_index;
+			right_index = middle_index - 1;
+		}
 		if (array->array[middle_index] > to_find) {
 			right_index = middle_index - 1;
 		}
@@ -122,7 +126,30 @@ int binary_search(const struct array* array, int to_find) {
 		}
 	}
 
-	return -1;
+	return found;
+}
+
+int rbinary_search(const struct array* array, int to_find) {
+	int right_index = array->size - 1;
+	int left_index = 0;
+	int found = -1;
+
+	while (left_index <= right_index) {
+		int middle_index = (left_index + right_index) / 2;
+
+		if (array->array[middle_index] == to_find) {
+			found = middle_index;
+			left_index = middle_index + 1;
+		}
+		if (array->array[middle_index] > to_find) {
+			right_index = middle_index - 1;
+		}
+		if (array->array[middle_index] < to_find) {
+			right_index = middle_index + 1;
+		}
+	}
+
+	return found;
 }
 
 /*dontuseitplease*/
