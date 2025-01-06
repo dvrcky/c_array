@@ -186,6 +186,21 @@ void pop_back(Vector* array) {
 	array->array[--array->size] = 0;
 }
 
+void pop(Vector* self, const size_t index) {
+	if (index < 0 || index >= self->size) { return; }
+
+	if (index == self->size - 1 || self->size == 1) {
+		pop_back(self);
+		return;
+	}
+
+	--self->size;
+	memmove(&self->array[index], &self->array[index + 1],
+				 (self->size - index - 1) * sizeof(*self->array));
+
+	return;
+}
+
 
 
 
