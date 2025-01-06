@@ -14,6 +14,7 @@ typedef struct Vector {
 extern Vector* new_vector(const size_t);
 
 extern void free_vector(Vector*);
+extern void pop_back(Vector*);
 
 /* Function frees array if it couldn`t reallocate memory
  * So check array before you use it next time.

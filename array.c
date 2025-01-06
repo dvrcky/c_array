@@ -161,6 +161,11 @@ bool check_if_vector_sorted(const Vector* array) {
 	return true;
 }
 
+void pop_back(Vector* array) {
+	if (!array->size) return;
+	array->array[--array->size] = 0;
+}
+
 
 
 
