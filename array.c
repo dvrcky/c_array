@@ -59,6 +59,26 @@ int64_t sum_vector(const Vector* array) {
 	return result;
 }
 
+bool push_back(Vector* array, const int64_t value) {
+	++array->size;
+
+	if (array->size >= array->capacity) {
+		array->capacity *= 2;
+		array->array = realloc(array->array, sizeof(int64_t) *
+												 array->capacity);
+
+		if (!array->array) { free(array); return false; }
+
+		array->array[array->size] = value;
+
+		return true;
+	}
+
+	array->array[array->size] = value;
+
+	return true;
+}
+
 Vector* copy_vector(const Vector* array) {
 	Vector* new_arr = new_vector(array->size);
 

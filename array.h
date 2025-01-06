@@ -15,6 +15,7 @@ extern Vector* new_vector(const size_t);
 
 extern void free_vector(Vector*);
 extern void pop_back(Vector*);
+extern bool push_back(Vector*, const int64_t);
 
 /* Function frees array if it couldn`t reallocate memory
  * So check array before you use it next time.
