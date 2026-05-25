@@ -90,3 +90,4 @@ int main(void) {
     return 0;
 }
 ```
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
