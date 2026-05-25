@@ -237,6 +237,17 @@ void fill_vector(Vector * self, int64_t value) {
 	for (size_t i = 0; i < self->size; ++i) self->array[i] = value;
 }
 
+Vector* slice_vector(const Vector* v, size_t from, size_t to) {
+	if (to <= from || to > v->size) return new_vector(0);
+
+	Vector* result = new_vector(to - from);
+	for (size_t i = from; i < to; ++i) {
+		result->array[i - from] = v->array[i];
+	}
+
+	return result;
+}
+
 
 
 
