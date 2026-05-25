@@ -1,6 +1,7 @@
 # c_array
 
 Dynamic array library for `int64_t` written in C11.
+Supports push/pop, slicing, filtering, mapping, binary search and more.
 
 ## Build
 
