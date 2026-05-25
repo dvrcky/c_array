@@ -1,4 +1,4 @@
-k# c_array
+# c_array
 
 Dynamic array library for `int64_t` written in C11.
 

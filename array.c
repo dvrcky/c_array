@@ -1,9 +1,9 @@
+#define _POSIX_C_SOURCE 200809L
 #include "array.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <stdint.h>
 
 Vector* new_vector(const size_t size) {
