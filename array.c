@@ -198,9 +198,9 @@ void pop(Vector* self, const size_t index) {
 		return;
 	}
 
-	--self->size;
 	memmove(&self->array[index], &self->array[index + 1],
 				 (self->size - index - 1) * sizeof(*self->array));
+	--self->size;
 
 	return;
 }
