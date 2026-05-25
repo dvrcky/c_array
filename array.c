@@ -232,3 +232,19 @@ void reverse_vector(Vector* self) {
         right--;
     }
 }
+
+void fill_vector(Vector * self, int64_t value) {
+	for (size_t i = 0; i < self->size; ++i) self->array[i] = value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
