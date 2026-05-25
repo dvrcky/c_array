@@ -262,3 +262,12 @@ void filter_vector(Vector* v, bool (*function)(int64_t)) {
             i++;
     }
 }
+
+size_t count_vector(const Vector* v, int64_t value) {
+	size_t result = 0;
+	for (size_t i = 0; i < v->size; ++i) {
+		if (v->array[i] == value) result++;
+	}
+
+	return result;
+}
