@@ -12,7 +12,7 @@ Vector* new_vector(const size_t size) {
 	if (!array) { return NULL; }
 
 	array->size = size;
-	array->capacity = size * 2;
+	array->capacity = size == 0 ? 1 : size * 2;
 	array->array = calloc(array->capacity, sizeof(int64_t));
 
 	if (!array->array) {
@@ -62,7 +62,7 @@ int64_t sum_vector(const Vector* array) {
 
 bool push_back(Vector* array, const int64_t value) {
     if (array->size >= array->capacity) {
-        array->capacity *= 2;
+		array->capacity = array->capacity == 0 ? 1 : array->capacity * 2;
         array->array = realloc(array->array, sizeof(int64_t) * array->capacity);
         if (!array->array) { free(array); return false; }
     }
