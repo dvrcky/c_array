@@ -43,6 +43,7 @@ extern void cstr_split(Vector*, char*, const char*);
 /* returns -1 if couldn`t find element */
 extern int64_t binary_search(const Vector*, int64_t);
 extern int64_t rbinary_search(const Vector*, int64_t);
-extern bool check_if_vector(const Vector*);
+
+
 
 #endif

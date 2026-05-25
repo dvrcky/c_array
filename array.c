@@ -194,15 +194,6 @@ int64_t rbinary_search(const Vector* array, int64_t to_find) {
 	return found;
 }
 
-/*dontuseitplease*/
-bool check_if_vector_sorted(const Vector* array) {
-	for (int i = 0; i < array->size - 1; ++i) {
-		if (array->array[i] > array->array[i + 1]) return false;
-	}
-
-	return true;
-}
-
 void pop_back(Vector* array) {
 	if (!array->size) return;
 	array->array[--array->size] = 0;
