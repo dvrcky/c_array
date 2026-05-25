@@ -262,6 +262,12 @@ Vector* concat_vector(const Vector* f, const Vector* s) {
 	return result;
 }
 
-
-
-
+void filter_vector(Vector* v, bool (*function)(int64_t)) {
+	size_t i = 0;
+    while (i < v->size) {
+        if (!function(v->array[i]))
+            pop(v, i);
+        else
+            i++;
+    }
+}
