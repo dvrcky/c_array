@@ -214,53 +214,11 @@ void pop(Vector* self, const size_t index) {
 	return;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void map_vector(Vector* self, int64_t (*function)(int64_t)) {
+	for (size_t i = 0; i < self->size; ++i) {
+		self->array[i] = function(self->array[i]);
+	}
+}
 
 
 

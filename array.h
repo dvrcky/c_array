@@ -44,6 +44,7 @@ extern void cstr_split(Vector*, char*, const char*);
 extern int64_t binary_search(const Vector*, int64_t);
 extern int64_t rbinary_search(const Vector*, int64_t);
 
+extern void map_vector(Vector*, int64_t (*fn)(int64_t));
 
 
 #endif
