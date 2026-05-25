@@ -109,6 +109,16 @@ int64_t max_vector(const Vector* array) {
 	return max;
 }
 
+int64_t min_vector(const Vector* array) {
+	int64_t min = INT64_MAX;
+
+	for (int i = 0; i < array->size; ++i) {
+		if (array->array[i] < min) { min = array->array[i]; }
+	}
+
+	return min;
+}
+
 Vector* move_vector(Vector* array) {
 	Vector* new_array = copy_vector(array);
 	free_vector(array);

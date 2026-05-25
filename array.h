@@ -25,6 +25,7 @@ extern void resize_vector(Vector*, size_t);
 
 extern int64_t sum_vector(const Vector*);
 extern int64_t max_vector(const Vector*);
+extern int64_t min_vector(const Vector*);
 
 /* Function returns NULL if couldn`t malloc memory for
  * new object of array
