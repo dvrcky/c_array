@@ -248,13 +248,19 @@ Vector* slice_vector(const Vector* v, size_t from, size_t to) {
 	return result;
 }
 
+Vector* concat_vector(const Vector* f, const Vector* s) {
+	Vector* result = new_vector(f->size + s->size);
 
+	for (size_t i = 0; i < f->size; ++i) {
+		result->array[i] = f->array[i];
+	}
 
+	for (size_t i = 0; i < s->size; ++i) {
+		result->array[i + f->size] = s->array[i];
+	}
 
-
-
-
-
+	return result;
+}
 
 
 

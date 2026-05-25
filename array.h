@@ -48,6 +48,8 @@ extern void map_vector(Vector*, int64_t (*fn)(int64_t));
 extern void reverse_vector(Vector*);
 extern void fill_vector(Vector*, int64_t);
 extern Vector* slice_vector(const Vector*, size_t, size_t);
+extern Vector* concat_vector(const Vector*, const Vector*);
+
 
 
 
