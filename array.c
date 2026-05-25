@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdint.h>
 
 Vector* new_vector(const size_t size) {
 	Vector* array = malloc(sizeof(Vector));
@@ -99,7 +100,7 @@ Vector* copy_vector(const Vector* array) {
 }
 
 int64_t max_vector(const Vector* array) {
-	int64_t max = -pow(10, 12);
+	int64_t max = INT64_MIN;
 
 	for (int i = 0; i < array->size; ++i) {
 		if (array->array[i] > max) { max = array->array[i]; }
