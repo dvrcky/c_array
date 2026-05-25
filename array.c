@@ -119,6 +119,17 @@ int64_t min_vector(const Vector* array) {
 	return min;
 }
 
+double avg_vector(const Vector* array) {
+	if (array->size == 0) return 0;
+	double result = 0;
+
+	for (int i = 0; i < array->size; ++i) {
+		result += array->array[i];
+	}
+
+	return result / array->size;
+}
+
 Vector* move_vector(Vector* array) {
 	Vector* new_array = copy_vector(array);
 	free_vector(array);
