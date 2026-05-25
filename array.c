@@ -220,7 +220,15 @@ void map_vector(Vector* self, int64_t (*function)(int64_t)) {
 	}
 }
 
-
-
-
-
+void reverse_vector(Vector* self) {
+	if (self->size == 0) return;
+	size_t left = 0;
+    size_t right = self->size - 1;
+    while (left < right) {
+        int64_t tmp = self->array[left];
+        self->array[left] = self->array[right];
+        self->array[right] = tmp;
+        left++;
+        right--;
+    }
+}
