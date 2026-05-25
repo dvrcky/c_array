@@ -83,12 +83,12 @@ bool push_back(Vector* array, const int64_t value) {
 Vector* copy_vector(const Vector* array) {
 	Vector* new_arr = new_vector(array->size);
 
-	if (!new_arr->array) {
-		free(new_arr);
+	if (!new_arr) {
 		return NULL;
 	}
 
-	if (!new_arr) {
+	if (!new_arr->array) {
+		free(new_arr);
 		return NULL;
 	}
 
