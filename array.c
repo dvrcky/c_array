@@ -40,7 +40,7 @@ void resize_vector(Vector* array, const size_t new_size) {
 	if (new_size <= array->capacity) { return; }
 
 	array->capacity = new_size * 2;
-	array->array = realloc(array, sizeof(int64_t) * array->capacity);
+	array->array = realloc(array->array, sizeof(int64_t) * array->capacity);
 
 	if (!array->array) {
 		free(array);
